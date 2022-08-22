@@ -1,0 +1,60 @@
+<!-- Meta Pixel Code -->
+<script>
+    ​
+    //Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles y/o formulas necesarias como en el ejemplo.
+    ​
+    var disneyShow = {{nombre}};
+    var disneyCantidad = {{cantidadLocalidad}};
+    var disneyTotalValue = ({{precio}}+{{Tax}})*{{cantidadLocalidad}};
+    var disneyCurrency = 'ARS';
+    ​
+    //Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+    ​
+    var_url = 'url'
+    var_show_name = 'content_name'
+    ​
+    // Disney Settings *** DO NOT UPDATE ***
+    ​
+    var_disneyPixelID = '713138689855827'
+    ​
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    ​
+        //Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles.
+    ​
+        //Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+    ​
+        var disneyShow = {{nombre}};
+        var disneyCantidad = {{cantidadLocalidad}};
+        var disneyTotalValue = ({{precio}}+{{Tax}})*{{cantidadLocalidad}};
+    ​
+    ​
+        fbq('init', 'disneyPixelID');
+        fbq('track', 'PageView'); 
+        fbq('trackSingle', 'disneyPixelID', 'Purchase',
+        
+            {
+            value: disneyTotalValue,
+            currency: 'ARS',
+            contents: [
+                {
+                id: disneyShow,
+                quantity: disneyCantidad
+                }],
+            content_type: 'product'
+            }
+        );
+    ​
+    ​
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=713138689855827&ev=PageView&noscript=1"
+        />
+    ​
+    <!-- End Meta Pixel Code -->

@@ -1,0 +1,58 @@
+<!-- Meta Pixel Code -->
+<script>
+
+//Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles y/o formulas necesarias como en el ejemplo.
+//Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+
+var disneyShow = {{ShowName}};
+var disneyQuantity = {{Quantity}};
+var disneyUnitPrice = {{UnitPrice}};
+var disneyOrderID = {{OrderID}}
+var disneyType = {{disneyTicketType}}
+
+
+//Si existiera un costo de utilizacion o impuesto por transaccion con su Macro correspondiente reemplazarla, en caso de no existir borrar la linea de var disneyTax y en la linea var disneyTotalValue quitar la porcion de codigo " +{{Tax}} "
+
+var disneyTax = {{Tax}}
+var disneyTotalValue = ({{UnitPrice}}+{{Tax}})*{{cantidadLocalidad}};
+var disneyCurrency = 'ARS';
+
+// Disney Settings *** DO NOT UPDATE ***
+
+var_disneyPixelID = '713138689855827'
+
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', disneyPixelID);
+    fbq('track', 'PageView'); 
+    fbq('trackSingle', disneyPixelID, 'Purchase',
+    
+        {
+        value: disneyTotalValue,
+        currency: 'ARS',
+        contents: [
+            {
+            id: disneyShow,
+            quantity: disneyCantidad
+            }],
+        content_type: 'product'
+        show: disneyShowDate,
+        show_dates: disneyTicketType,
+        item_price: disneyItemPrice,
+        }
+    );
+
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=713138689855827&ev=PageView&noscript=1"
+    />
+
+<!-- End Meta Pixel Code -->

@@ -1,0 +1,6 @@
+<!-- Flashtalking Container Tag: Disney_Others_SSLA (18701) | Ticketek Step 5 Compra Exitosa (129597) | Disney_Others_SSLA (13130) | Expected URL: | Export Date: Apr. 1, 2022 @ 7:38pm UTC -->
+<script type="text/javascript">
+var ftRandom = Math.random()*1000000;
+var ftPrecioTotal = ({{precio}}+{{tax}})*{{cantidadLocalidad}};
+document.write('<iframe style="position:absolute; visibility:hidden; width:1px; height:1px;" src="https://servedby.flashtalking.com/container/18701;129597;13130;iframe/?spotName=Ticketek_Step_5_Compra_Exitosa&ftXCurrency=ARS&ftXNumItems={{cantidadLocalidad}}&ftXRef={{transactionId}}&ftXValue='+ftPrecioTotal+'&U1={{nombre}}&U3={{fecha}}&U4={{cantidadLocalidad}}&U6='+ftPrecioTotal+'&U7={{_url}}&U8={{metodoEnvio}}&cachebuster='+ftRandom+'"></iframe>');
+</script>

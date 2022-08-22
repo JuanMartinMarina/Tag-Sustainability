@@ -1,0 +1,57 @@
+<!-- Meta Pixel Code -->
+<script>
+
+//Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles y/o formulas necesarias como en el ejemplo.
+
+//Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+var disneyShow = {{ShowName}};
+var disneyShowDate = {{ShowDate}};
+var disneyQuantity = {{Quantity}};
+var disneyTicketType = {{TicketType}};
+var disneyUnitPrice = {{UnitPrice}};
+var disneyCurrency = 'ARS';
+var disneyDeliveryType = {{DeliveryType}}; //NO MANDATORIO
+var disneyOtherCharges = {{DeliveryCharge}}; //NO MANDATORIO
+var disneyTotalValue = ({{UnitPrice}}*{{Quantity}}) + disneyOtherCharges;
+
+// Disney Settings *** DO NOT UPDATE ***
+
+var disneyPixelID = '713138689855827';
+
+// Code Begins
+
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', disneyPixelID);
+fbq('trackSigle', disneyPixelID, 'PageView');
+fbq('trackCustom', disneyPixelID, 'DeliveryTypeSelection',
+
+{
+    value: disneyTotalValue,
+    currency: disneyCurrency,
+    contents:
+    [
+        {
+            id: disneyShow,
+            quantity: disneyQuantity,
+        }
+    ],
+    
+    content_type: 'product',
+    show: disneyShow,
+    show_dates: disneyShowDate,
+    item_price: disneyUnitPrice,
+    ticket_type: disneyTicketType,
+    delivey_type: disneyDeliveryType, //NO MANDATORIO
+    other_charges: disneyOtherCharges, //NO MANDATORIO
+}
+);
+
+</script>
+<!-- End Meta Pixel Code -->

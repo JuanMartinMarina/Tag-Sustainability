@@ -1,0 +1,25 @@
+<!-- Flashtalking Container Tag: Disney_Others_SSLA (18701) | Ticketek Step 5 Compra Exitosa (129597) | Disney_Others_SSLA (13130) | Expected URL: | Export Date: Apr. 1, 2022 @ 7:38pm UTC -->
+<script type="text/javascript">
+
+//Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles.
+
+//Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+
+var disneyCantidad = {{Quantity}};
+var disneyTotalValue = ({{Unit_Price}}*{{Quantity}});
+var disneyShow = {{ShowName}};
+var disneyFuncion = {{ShowDate}};
+var disneyUrl = {{Url}};
+var disneyTransactionID = {{transactionID}};
+var disneyCurrency = 'ARS';
+
+// Disney Settings ***DO NOT UPDATE ***
+
+var ftRandom = Math.random()*1000000;
+var ftAdvID = '17899';
+var ftSpotID = '130268';
+var ftSpotGroup = '13268';
+var spotName = 'Step:5_Purchase';
+
+document.write('<iframe style="position:absolute; visibility:hidden; width:1px; height:1px;" src="https://servedby.flashtalking.com/container/'+ftAdvID+';'+ftSpotID+';'+ftSpotGroup+';iframe/?spotName='+spotName+'&ftXCurrency='+disneyCurrency+'&ftXNumItems='+ftCantidad +'&ftXRef='+ftTransactionID+'&ftXValue='+ftPrecioTotal+'&U1='+ftShow+'&U3='+ftFuncion+'&U4='+ftCantidad+'&U6='+ftPrecioTotal+'&U7='+ftUrl+'&U8='+ftMetodoEnvio+'&cachebuster='+ftRandom+'"></iframe>');
+</script>

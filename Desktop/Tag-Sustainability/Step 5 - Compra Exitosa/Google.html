@@ -1,0 +1,49 @@
+<!-- 
+Start of global snippet: Please do not remove
+Place this snippet between the <head> and </head> tags on every page of your site.
+-->
+<!-- Global site tag (gtag.js) - Google Marketing Platform -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=DC-5967829"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'DC-5967829');
+</script>
+<!-- End of global snippet: Please do not remove -->
+
+<!--
+Event snippet for Ticketek - Step 5 - Compra Exitosa on https://www.ticketek.com.ar/websource/purchase/success/: Please do not remove.
+Place this snippet on pages with events you’re tracking. 
+Creation date: 04/01/2022
+-->
+<script>
+
+  //Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles.
+
+  //Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+
+  var disneyShow = {{nombre}};
+  var disneyCantidad = {{cantidadLocalidad}};
+  var disneyTotalValue = ({{precio}}+{{Tax}})*{{cantidadLocalidad}};
+  var disneyFuncion = {{fecha}};
+  var disneyUrl = {{_url}};
+  var disneyMetodoEnvio = {{metodoEnvio}};
+  var disneyTransactionID = {{transactionId}};
+
+  gtag('event', 'purchase', {
+    'allow_custom_scripts': true,
+    'value': disneyTotalValue,
+    'transaction_id': disneyTransactionID,
+    'u23': disneyUrl,
+    'u25': disneyShow,
+    'u26': disneyFuncion,
+    'u27': disneyCantidad,
+    'u29': disneyMetodoEnvio,
+    'u30': disneyTotalValue,    
+    'send_to': 'DC-5967829/ticke001/ticke1+transactions'
+  });
+</script>
+
+<!-- End of event snippet: Please do not remove -

@@ -1,0 +1,36 @@
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '713138689855827');
+    fbq('track', 'PageView'); 
+    fbq('trackSingle', '713138689855827', 'Purchase',
+    //REEMPLAZAR los valores que estan entre "{{ }}" (dejando las llaves en el caso que sea Google Tag Manager)
+        {
+        value: ({{precio}}+{{tax}})*{{cantidadLocalidad}},
+        currency: 'ARS',
+        contents: [
+            {
+            id: {{nombre}},
+            quantity: {{cantidadLocalidad}}
+            }],
+        content_type: 'product'
+        }
+    );
+
+    //REEMPLAZAR los valores que estan entre "{{ }}" tambien en el No Script (dejando las llaves en el caso que sea Google Tag Manager)
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=713138689855827&ev=PageView&noscript=1"
+    /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=713138689855827&ev=Purchase&cd[value]={{precio}}&cd[currency]=ARS&cd[contents]=[{id:{{nombre}},quantity:{{cantidadLocalidad}]&cd[content_type]'product'&noscript=1"
+    /></noscript>
+
+<!-- End Meta Pixel Code -->

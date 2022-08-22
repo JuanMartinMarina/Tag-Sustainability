@@ -1,0 +1,44 @@
+<!-- Meta Pixel Code -->
+<script>
+
+//Google Tag Manager:: REEMPLAZAR los valores que estan entre "{{ }}" con los nombres reales de las variables disponibles y/o formulas necesarias como en el ejemplo.
+
+//Otros Tag Managers :: REEMPLAZAR la sintaxis completa de las variables (incluidos los {{}}) con la sintaxis correcta de variables del Tag Manager usado.
+
+var_nombre = 'show'
+var_fecha = 'funcion'
+var_cantidad = 'cantidad'
+var_tipo_de_entrada = 'tipo_de_entrada'
+var_total_a_pagar = 'total_a_pagar'
+var_show_name = 'conten_name' //consultar a Fran//
+
+// Disney Settings *** DO NOT UPDATE ***
+
+var_disneyPixelID = '713138689855827'
+
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'disneyPixelID');
+    fbq('track', 'PageView');
+    fbq('trackSingle', 'disneyPixelID', 'ViewContent',
+    //REEMPLAZAR los valores que estan entre "{{ }}" (dejando las llaves en el caso que sea Google Tag Manager)
+        {
+        show: {{nombre}},
+        funcion: {{fecha}},
+	    cantidad: {{cantidadLocalidad}},
+	    tipo_de_entrada: {{tipoPrecio}},
+	    total_a_pagar: {{precio}}*{{cantidadLocalidad}},
+        content_name: 'Metodo de Entrega'
+        }
+    );
+
+    </script>
+
+
+<!-- End Meta Pixel Code -->
